@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "体验版已经过期", Toast.LENGTH_SHORT).show();
             return;
         }
-        Toast.makeText(this, String.valueOf(getResult()), Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(MainActivity.this, ResultActivity.class);
         intent.putExtra("result", getResult());
         startActivity(intent);
