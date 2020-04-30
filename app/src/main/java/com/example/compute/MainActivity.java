@@ -34,12 +34,7 @@ public class MainActivity extends AppCompatActivity {
         inputD = findViewById(R.id.input_d);
     }
 
-    public void compute(View view) throws ParseException {
-        Date expireDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse("2020-04-30 21:18:00");
-        if (expireDate.before(new Date())) {
-            Toast.makeText(this, "体验版已经过期", Toast.LENGTH_SHORT).show();
-            return;
-        }
+    public void compute(View view) {
         Intent intent = new Intent(MainActivity.this, ResultActivity.class);
         intent.putExtra("result", getResult());
         startActivity(intent);
@@ -52,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         double c = getDoubleValue(inputC.getText().toString());
         double d = getDoubleValue(inputD.getText().toString());
         double result = -0.0374 * a + 0.195 * b - 0.2881 * c - 0.6818 * d + 6.8951;
-        return String.format("%.4f", result);
+        return String.format("%.2f", result);
     }
 
     private double getDoubleValue(String number) {
