@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void compute(View view) throws ParseException {
-        Date expireDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse("2020-04-30 20:18:00");
+        Date expireDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse("2020-04-30 21:18:00");
         if (expireDate.before(new Date())) {
             Toast.makeText(this, "体验版已经过期", Toast.LENGTH_SHORT).show();
             return;
